@@ -42,7 +42,7 @@ public class Main {
         System.out.println("File output demo");
         String testfileV=System.getProperty("user.dir")+"/ExerciseDataFiles/volatile.txt";
         FilesystemTest.initFile(testfileV,"Hello, world!\n");
-        System.out.println("initial content");
+        System.out.println("File created, initial content");
         System.out.println(FilesystemTest.readFile(testfileV));
         FilesystemTest.appendStringToFile(testfileV,"Try with resources is great, use it.");
         System.out.println("new content");

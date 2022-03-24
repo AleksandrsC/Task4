@@ -102,5 +102,30 @@ public class FilesystemTest {
 
     }
 
+    /**
+     * W3r task 16
+     * 16. Write a Java program to append text to an existing file.
+     * @param path path to file
+     * @param data data to be appended
+     */
+    public static void appendStringToFile (String path, String data){
+        try(OutputStreamWriter out=new OutputStreamWriter (new BufferedOutputStream(new FileOutputStream(path,true)))){
+            out.write(data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//appendStringToFile
+    /**
+     * W3r task helper method, so we would always have the same file.
+     * @param path path to file
+     * @param data data to be stored
+     */
+    public static void initFile (String path, String data){
+        try(OutputStreamWriter out=new OutputStreamWriter (new BufferedOutputStream(new FileOutputStream(path,false)))){
+            out.write(data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//appendStringToFile
 
 }

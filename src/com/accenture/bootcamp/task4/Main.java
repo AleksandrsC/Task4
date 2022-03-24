@@ -1,6 +1,8 @@
 package com.accenture.bootcamp.task4;
 
 
+import java.io.File;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -36,7 +38,20 @@ public class Main {
         System.out.println();
         System.out.println("Longest word demo");
         System.out.println("The longest word in "+testfile+" is:"+FilesystemTest.longestWord(testfile));
-
+        System.out.println();
+        System.out.println("File output demo");
+        String testfileV=System.getProperty("user.dir")+"/ExerciseDataFiles/volatile.txt";
+        FilesystemTest.initFile(testfileV,"Hello, world!\n");
+        System.out.println("initial content");
+        System.out.println(FilesystemTest.readFile(testfileV));
+        FilesystemTest.appendStringToFile(testfileV,"Try with resources is great, use it.");
+        System.out.println("new content");
+        System.out.println(FilesystemTest.readFile(testfileV));
+        if(new File(testfileV).delete()){
+            System.out.println("file deleted|");
+        }else{
+            System.out.println("file disappeared?");
+        }
 
 
     }

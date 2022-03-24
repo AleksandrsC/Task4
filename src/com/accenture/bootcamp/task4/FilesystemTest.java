@@ -57,6 +57,12 @@ public class FilesystemTest {
 
     }//readFile
 
+    /**
+     * 12. Write a Java program to read a plain text file.
+     * A better implementation.
+     * @param path path to the file
+     * @return File content as a single String or "cannot read file."
+     */
     public static String readFileWithScanner(String path) {
         StringBuilder rv;
         try (Scanner s = new Scanner(Path.of(path))) {
@@ -67,10 +73,33 @@ public class FilesystemTest {
                 rv.append("\n");//Scanner should return us \r if the file has \r\n
             }
         }catch(Exception x){
-            x.printStackTrace();
+            //x.printStackTrace();
             return "cannot read file.";
         }
         return rv.toString();
+    }
+
+    /**
+     * W3r task:
+     * 18. Write a Java program to find the longest word in a text file.
+     * @param path path to file
+     * @return the longest word or empty string if it cannot read file, or it has no words/tokens
+     * as per "[\\s\\p{Punct}]+" as java.util.Scanner delimiter.
+     */
+    public static String longestWord(String path){
+        String rv="";
+        try (Scanner s = new Scanner(Path.of(path))) {
+            s.useDelimiter("[\\s\\p{Punct}]+");
+            while(s.hasNext()){
+                String newWord=s.next();
+                if(rv.length()<newWord.length())
+                    rv=newWord;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return rv;
+
     }
 
 

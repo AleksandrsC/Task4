@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
         ColourFun.ColourDemo();
 
+        System.out.println();
         String test1 = "one two one, one";
         System.out.println("Test case 1:"+test1 );
         System.out.printf("w/o punctuation ignored count should be 3: %d%n", UniqueWords.count(test1,false,false));
@@ -22,7 +23,7 @@ public class Main {
         System.out.printf("case sensitive punct kept: %d%n", UniqueWords.count(Text.TEXT,true,false));
         System.out.printf("case insensitive punct ignored: %d%n", UniqueWords.count(Text.TEXT,false,true));
         System.out.printf("case insensitive punct kept: %d%n", UniqueWords.count(Text.TEXT,false,false));
-
+        System.out.println();
         System.out.println("w3 resources tasks");
         System.out.println("list working dir:"+FilesystemTest.ls(System.getProperty("user.dir")));
         String testfile=System.getProperty("user.dir")+"/ExerciseDataFiles/text.txt";
@@ -32,6 +33,9 @@ public class Main {
         System.out.println(FilesystemTest.readFileWithScanner(testfile));
         System.out.println("nonexistent file using more modern Java:");
         System.out.println(FilesystemTest.readFileWithScanner("there's no such file"));
+        System.out.println();
+        System.out.println("Longest word demo");
+        System.out.println("The longest word in "+testfile+" is:"+FilesystemTest.longestWord(testfile));
 
 
 

@@ -1,10 +1,8 @@
 package com.accenture.bootcamp.task4;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.nio.file.Path;
+import java.util.*;
 
 public class FilesystemTest {
     private static final List<String> EMPTY_LIST=Collections.unmodifiableList(new ArrayList<>()) ;
@@ -57,6 +55,22 @@ public class FilesystemTest {
         }
 
 
+    }//readFile
+
+    public static String readFileWithScanner(String path) {
+        StringBuilder rv;
+        try (Scanner s = new Scanner(Path.of(path))) {
+            s.useDelimiter("\\n");
+            rv = new StringBuilder();
+            while (s.hasNext()) {
+                rv.append(s.next());
+                rv.append("\n");//Scanner should return us \r if the file has \r\n
+            }
+        }catch(Exception x){
+            x.printStackTrace();
+            return "cannot read file.";
+        }
+        return rv.toString();
     }
 
 

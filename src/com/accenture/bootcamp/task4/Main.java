@@ -28,6 +28,9 @@ public class Main {
         String testfile=System.getProperty("user.dir")+"/ExerciseDataFiles/text.txt";
         System.out.println("file "+testfile+" contents:");
         System.out.println(FilesystemTest.readFile(testfile));
+        System.out.println("file "+testfile+" contents using more modern Java:");
+        System.out.println(FilesystemTest.readFileWithScanner(testfile));
+
 
 
 

@@ -23,5 +23,10 @@ public class Main {
         System.out.printf("case insensitive punct ignored: %d%n", UniqueWords.count(Text.TEXT,false,true));
         System.out.printf("case insensitive punct kept: %d%n", UniqueWords.count(Text.TEXT,false,false));
 
+        System.out.println("w3 resources tasks");
+        System.out.println("list working dir:"+FilesystemTest.ls(System.getProperty("user.dir")));
+
+
+
     }
 }

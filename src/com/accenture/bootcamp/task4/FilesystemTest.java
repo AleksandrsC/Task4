@@ -41,7 +41,7 @@ public class FilesystemTest {
             String current=br.readLine();
             while(current!=null){
                 rv.append(current);
-                rv.append("\n"); //TODO: figure out a way to add \r\n if in the orig file
+                rv.append(System.lineSeparator()); //TODO: figure out a way to keep the same line separator as original file.
                 current=br.readLine();
             }
             return rv.toString();

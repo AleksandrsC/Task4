@@ -1,5 +1,8 @@
 package com.accenture.bootcamp.task4;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
         *  1.declare and initialize String array with 7arbitrary colors.
         *  2. Create new list "colors" (ArrayList) of type String
@@ -14,5 +17,18 @@ package com.accenture.bootcamp.task4;
         *  9. Use for loop to output each element of colorsSublist list
  */
 public class ColourFun {
+    private static String[] rainbow={"red","orange","yellow","green","blue","indigo","violet"};
+    private static ArrayList<String> colours=new ArrayList<String>(Arrays.asList(rainbow));//asList returns List , not ArrayList.
 
+    public static void ColourDemo(){
+        System.out.printf("colours as initialised %s%n", colours); //BTW, IDEA lets you convert between concatenation,
+                                                                   // printf, MessagewFormat (the PHP-like {0}
+                                                                   //notation) and StringBuffer/StringBuilder automatically
+        colours.remove(2);//3rd element
+        System.out.printf("Removing the 3rd %s%n", colours);
+        colours.add("mauve");
+        System.out.printf("Mauve added at the end %s%n", colours);
+        colours.add(0,"burgundy");
+        System.out.printf("Burgundy added at the start %s%n", colours);
+    }
 }

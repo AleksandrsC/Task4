@@ -1,6 +1,7 @@
 package com.accenture.bootcamp.task4;
 
-import java.io.File;
+import java.io.*;
+import java.nio.* ;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -19,6 +20,44 @@ public class FilesystemTest {
         if(list!=null)
             return Arrays.asList(list);
         return EMPTY_LIST;
+    }
+
+    /**
+     * 12. Write a Java program to read a plain text file.
+     * @param path path to the file
+     * @return File content as a single String or "cannot read file."
+     */
+    public static String readFile(String path) {
+        File file=new File(path);
+        FileInputStream fis=null;
+        try{
+            fis=new FileInputStream(file);
+        }catch (Exception x){
+            x.printStackTrace();//TODO: replace with proper logging
+            return "cannot read file.";
+        }
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(fis));
+            StringBuilder rv=new StringBuilder();
+            String current=br.readLine();
+            while(current!=null){
+                rv.append(current);
+                rv.append("\n"); //TODO: figure out a way to add \r\n if in the orig file
+                current=br.readLine();
+            }
+            return rv.toString();
+        }catch (Exception x){
+            x.printStackTrace();//TODO: replace with proper logging
+            return "cannot read file.";
+        }finally{
+            try {
+                fis.close();//shouldn't be null at this point.
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
     }
 
 

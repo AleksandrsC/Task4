@@ -25,6 +25,9 @@ public class Main {
 
         System.out.println("w3 resources tasks");
         System.out.println("list working dir:"+FilesystemTest.ls(System.getProperty("user.dir")));
+        String testfile=System.getProperty("user.dir")+"/ExerciseDataFiles/text.txt";
+        System.out.println("file "+testfile+" contents:");
+        System.out.println(FilesystemTest.readFile(testfile));
 
 
 

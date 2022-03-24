@@ -1,7 +1,6 @@
 package com.accenture.bootcamp.task4;
 
 import java.io.*;
-import java.nio.* ;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -29,7 +28,7 @@ public class FilesystemTest {
      */
     public static String readFile(String path) {
         File file=new File(path);
-        FileInputStream fis=null;
+        FileInputStream fis;
         try{
             fis=new FileInputStream(file);
         }catch (Exception x){

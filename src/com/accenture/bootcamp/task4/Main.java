@@ -30,7 +30,8 @@ public class Main {
         System.out.println(FilesystemTest.readFile(testfile));
         System.out.println("file "+testfile+" contents using more modern Java:");
         System.out.println(FilesystemTest.readFileWithScanner(testfile));
-
+        System.out.println("nonexistent file using more modern Java:");
+        System.out.println(FilesystemTest.readFileWithScanner("there's no such file"));
 
 
 

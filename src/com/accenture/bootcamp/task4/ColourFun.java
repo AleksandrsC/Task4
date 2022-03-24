@@ -2,6 +2,7 @@ package com.accenture.bootcamp.task4;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
         *  1.declare and initialize String array with 7arbitrary colors.
@@ -18,7 +19,7 @@ import java.util.Arrays;
  */
 public class ColourFun {
     private static String[] rainbow={"red","orange","yellow","green","blue","indigo","violet"};
-    private static ArrayList<String> colours=new ArrayList<String>(Arrays.asList(rainbow));//asList returns List , not ArrayList.
+    private static ArrayList<String> colours=new ArrayList<>(Arrays.asList(rainbow));//asList returns List , not ArrayList.
 
     public static void ColourDemo(){
         System.out.printf("colours as initialised %s%n", colours); //BTW, IDEA lets you convert between concatenation,
@@ -30,5 +31,24 @@ public class ColourFun {
         System.out.printf("Mauve added at the end %s%n", colours);
         colours.add(0,"burgundy");
         System.out.printf("Burgundy added at the start %s%n", colours);
+        System.out.println("loop demo");
+        System.out.println(colorListToString(colours));
+
+    }
+
+    /**
+     *
+     * @param colours colour names to display
+     * @return colour names separated by spaces in angle braces.
+     */
+
+    private static String colorListToString(List<? extends String> colours) {
+        StringBuilder rv=new StringBuilder("<");
+        for(String colour:colours){
+            rv.append(colour);
+            rv.append(" ");
+        }
+        rv.append(">");
+        return rv.toString();
     }
 }

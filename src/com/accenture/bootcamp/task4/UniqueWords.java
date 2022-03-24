@@ -19,7 +19,6 @@ public class UniqueWords {
         if(isCaseSensitive) text=text.toUpperCase();
          String[] words=text.split(ignorePunctuation?"[\\s\\p{Punct}]+":"\\s+");
          HashSet<String> uniqueWords=new HashSet<>(Arrays.asList(words));
-         //System.out.println();
          return uniqueWords.size();
 
     }

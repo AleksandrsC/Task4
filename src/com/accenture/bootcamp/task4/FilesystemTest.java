@@ -23,6 +23,8 @@ public class FilesystemTest {
      * 12. Write a Java program to read a plain text file.
      * @param path path to the file
      * @return File content as a single String or "cannot read file."
+     * @deprecated  it's clunky old-style code try with resources should be used for all modern applications
+     * as well as java.util.scanner if you don't need thread safety.
      */
     public static String readFile(String path) {
         File file=new File(path);
@@ -30,7 +32,7 @@ public class FilesystemTest {
         try{
             fis=new FileInputStream(file);
         }catch (Exception x){
-            x.printStackTrace();//TODO: replace with proper logging
+            x.printStackTrace();
             return "cannot read file.";
         }
         try {
@@ -39,12 +41,12 @@ public class FilesystemTest {
             String current=br.readLine();
             while(current!=null){
                 rv.append(current);
-                rv.append(System.lineSeparator()); //TODO: figure out a way to keep the same line separator as original file.
+                rv.append(System.lineSeparator());
                 current=br.readLine();
             }
             return rv.toString();
         }catch (Exception x){
-            x.printStackTrace();//TODO: replace with proper logging
+            x.printStackTrace();
             return "cannot read file.";
         }finally{
             try {

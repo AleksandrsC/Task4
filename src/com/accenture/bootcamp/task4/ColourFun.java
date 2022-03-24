@@ -23,7 +23,7 @@ public class ColourFun {
 
     public static void ColourDemo(){
         System.out.printf("colours as initialised %s%n", colours); //BTW, IDEA lets you convert between concatenation,
-                                                                   // printf, MessagewFormat (the PHP-like {0}
+                                                                   // printf, MessageFormat (the PHP-like {0}
                                                                    //notation) and StringBuffer/StringBuilder automatically
         colours.remove(2);//3rd element
         System.out.printf("Removing the 3rd %s%n", colours);

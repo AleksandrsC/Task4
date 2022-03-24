@@ -32,7 +32,11 @@ public class ColourFun {
         colours.add(0,"burgundy");
         System.out.printf("Burgundy added at the start %s%n", colours);
         System.out.println("loop demo");
-        System.out.println(colorListToString(colours));
+        System.out.println(colourListToString(colours));
+        List<String> coloursSublist=colours.subList(2,5);
+        System.out.printf("sublist index 2 to 5 %s%n", coloursSublist);
+        System.out.println("second loop demo");
+        System.out.println(colourListToString2(coloursSublist));
 
     }
 
@@ -42,13 +46,29 @@ public class ColourFun {
      * @return colour names separated by spaces in angle braces.
      */
 
-    private static String colorListToString(List<? extends String> colours) {
+    private static String colourListToString(List<? extends String> colours) {
         StringBuilder rv=new StringBuilder("<");
         for(String colour:colours){
             rv.append(colour);
             rv.append(" ");
         }
         rv.append(">");
+        return rv.toString();
+    }
+
+    /**
+     *
+     * @param colours colour names to display
+     * @return colour names separated by commas
+     */
+
+    private static String colourListToString2(List<? extends String> colours) {
+        StringBuilder rv=new StringBuilder();
+        for(int i=0;i<colours.size()-1;i++){
+            rv.append(colours.get(i));
+            rv.append(", ");
+        }
+        rv.append(colours.get(colours.size()-1));
         return rv.toString();
     }
 }

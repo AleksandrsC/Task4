@@ -45,7 +45,7 @@ public class Main {
         System.out.println("File created, initial content");
         System.out.println(FilesystemTest.readFile(testfileV));
         FilesystemTest.appendStringToFile(testfileV,"Try with resources is great, use it.");
-        System.out.println("new content");
+        System.out.println("new content appended to file");
         System.out.println(FilesystemTest.readFile(testfileV));
         if(new File(testfileV).delete()){
             System.out.println("file deleted|");
